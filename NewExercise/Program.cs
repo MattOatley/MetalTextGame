@@ -29,7 +29,7 @@ namespace NewExercise
             string playerClass = Console.ReadLine();
 
             Console.WriteLine($"{playerName} you have selected the {playerClass} class. Your adventure will begin soon!" +
-                $"Now you must assign your attribute points";
+                $"Now you must assign your attribute points");
 
             Console.WriteLine("First here is a brief description of each attribute:" +
                 "Strength - Determines how much damage you deal with weapons" +
@@ -76,6 +76,12 @@ namespace NewExercise
 
 
         }
+
+        private static object Encounter(string playerStr)
+        {
+            throw new NotImplementedException();
+        }
+
         public static string Encounter(int x)
         {
             if(x >= 10)
@@ -86,6 +92,7 @@ namespace NewExercise
             {
                 Console.WriteLine("You deal 5 points of damage");
             }
+            return "You missed the target.";
         }
 
         private static readonly Random _random = new Random();
