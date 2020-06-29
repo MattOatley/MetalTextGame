@@ -31,21 +31,23 @@ namespace NewExercise
             Console.WriteLine($"{playerName} you have selected the {playerClass} class. Your adventure will begin soon!" +
                 $"Now you must assign your attribute points");
 
-            Console.WriteLine("First here is a brief description of each attribute:" +
-                "Strength - Determines how much damage you deal with weapons" +
-                "Agility - Determines how many attacks you may make each turn" +
-                "Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");
+            Console.WriteLine("First here is a brief description of each attribute:");
+            Console.WriteLine("Strength - Determines how much damage you deal with weapons");
+            Console.WriteLine("<===========================================================>");
+            Console.WriteLine("Agility - Determines how many attacks you may make each turn");
+            Console.WriteLine("<===========================================================>");
+            Console.WriteLine("Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");    
 
             Console.WriteLine("You have 20 attribute points.");
             
             Console.WriteLine("How many points would you like to add to Strength?");
-            var playerStr = Console.ReadLine();
+            int playerStr = int.Parse(Console.ReadLine());
 
             Console.WriteLine("How many points would you like to add to Agility?");
-            var playerAgi = Console.ReadLine();
+            var playerAgi = int.Parse(Console.ReadLine());
 
             Console.WriteLine("How many points would you like to add to Intellect?");
-            var playerInt = Console.ReadLine();
+            var playerInt = int.Parse(Console.ReadLine());
 
             Console.WriteLine($"You grip your weapon tightly as you brace yourself for whatever lies outside of the church." +
                 $"You are {playerName}, and you will become a powerful {playerClass}." +
@@ -59,17 +61,38 @@ namespace NewExercise
                 "You have no choice, it is time to fight, you unsheath your weapon and the man smirks - Ah, he still has a little fight in him." +
                 "Good! The meal is always more satisfying when it puts up a fight.");
 
-            var battleOne = Encounter(playerStr);
+            var battleOne = Encounter(playerStr, playerAgi);
 
-            Console.WriteLine($"Knowing that your opponent is stronger, you seize the initiative and strike first. {battleOne}.");
+            Console.WriteLine($"Knowing that your opponent is stronger, you seize the initiative and strike first.");
+            Console.WriteLine(battleOne);
 
             int enemyDmg1 = RandomNumber(0, 11);
 
             Console.WriteLine("The man stumbles in pain, but quickly regains his footing - Ha! It will take more than that to best me!");
             Console.WriteLine($"He lashes forward with his razor sharp claws, you attempt to block his attack." +
                 $"The mysterious man deals {enemyDmg1} points of dmg to you");
+            Console.WriteLine();
+            Console.WriteLine("The slash burns your skin, but you won't go down that easily. You strike back.");
+            Console.WriteLine(battleOne);
+            Console.WriteLine();
+            Console.WriteLine("The mysterious man shrieks in pain. You have hurt him this time." +
+                "The next thing you know the man is engulfed in smoke, you cant see him through the haze and begin swinging your weapon wildly." +
+                "You hit nothing, and as the smoke dissipates you realize he has vanished.");
+            // This is the first battle, and very basic. Each encounter will add more variable and more code.
+            
+            Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
+                "As you look down toward the smoldering town, many more questions arise, and you need answers.");
+            Console.WriteLine("You make your way down to what is left of the town and notice that the inn remains somewhat intact." +
+                "You make your way inside and into the pub area. The few people you see inside show signs of struggle, and all have expressions of great sorrow." +
+                "You immediately approach the barkeep.");
+            Console.WriteLine("Hello lad, he says attempting to bring out something resembling a smile.");
+            Console.WriteLine("***************************************************************************");
+            Console.WriteLine("Choose what to say by typing in the number associated with the text:");
+            Console.WriteLine("1. What the hell happened here?");
+            Console.WriteLine("2. Where am I? I awoke in the church and can barely remember my name.");
+            Console.WriteLine("***************************************************************************");
 
-
+            
 
 
 
@@ -77,20 +100,25 @@ namespace NewExercise
 
         }
 
-        private static object Encounter(string playerStr)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        public static string Encounter(int x)
+        public static string Encounter(int x, int y)
         {
-            if(x >= 10)
+            if(x >= 10 && y >= 10)
             {
-                Console.WriteLine("You deal 10 points of damage");
+                Console.WriteLine("You hit the target two times for 10 points of damage each; dealing a total of 20 damage.");
             }
-            else
+            else if (x <= 10 && y >= 10)
             {
-                Console.WriteLine("You deal 5 points of damage");
+                Console.WriteLine("You hit the target two times for 5 points of damage each; dealing a total of 10 damage.");
+            }
+            else if (x <= 10 && y <= 10)
+            {
+                Console.WriteLine("You hit the target one time for 5 points of damage each; dealing a total of 5 damage.");
+            }
+            else if (x >= 10 && y <= 10)
+            {
+                Console.WriteLine("You hit the target one time for 10 points of damage each; dealing a total of 10 damage.") ;
             }
             return "You missed the target.";
         }
@@ -100,6 +128,18 @@ namespace NewExercise
         public static int RandomNumber(int min, int max)
         {
             return _random.Next(min, max);
+        }
+
+        public static int Conversation1(int x)
+        {
+            if (x == 1)
+            {
+                Console.WriteLine("");
+            }
+            else if (x == 2)
+            {
+                Console.WriteLine("Ah stranger, you are in what was once the town of Bergen, Norway.Don't tell me you have come from a different land during such troubling times.");
+            }
         }
     }
 }
