@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
 
 namespace NewExercise
 {
@@ -36,10 +37,10 @@ namespace NewExercise
             Console.WriteLine("<===========================================================>");
             Console.WriteLine("Agility - Determines how many attacks you may make each turn");
             Console.WriteLine("<===========================================================>");
-            Console.WriteLine("Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");    
+            Console.WriteLine("Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");
 
             Console.WriteLine("You have 20 attribute points.");
-            
+
             Console.WriteLine("How many points would you like to add to Strength?");
             int playerStr = int.Parse(Console.ReadLine());
 
@@ -78,9 +79,9 @@ namespace NewExercise
             Console.WriteLine("The mysterious man shrieks in pain. You have hurt him this time." +
                 "The next thing you know the man is engulfed in smoke, you cant see him through the haze and begin swinging your weapon wildly." +
                 "You hit nothing, and as the smoke dissipates you realize he has vanished.");
-            // This is the first battle, and very basic. Each encounter will add more variable and more code.
-            
-            Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
+            This is the first battle, and very basic.Each encounter will add more variable and more code.
+
+          Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
                 "As you look down toward the smoldering town, many more questions arise, and you need answers.");
             Console.WriteLine("You make your way down to what is left of the town and notice that the inn remains somewhat intact." +
                 "You make your way inside and into the pub area. The few people you see inside show signs of struggle, and all have expressions of great sorrow." +
@@ -91,6 +92,9 @@ namespace NewExercise
             Console.WriteLine("1. What the hell happened here?");
             Console.WriteLine("2. Where am I? I awoke in the church and can barely remember my name.");
             Console.WriteLine("***************************************************************************");
+            
+            int chat = int.Parse(Console.ReadLine());
+            Conversation1(chat);
 
             
 
@@ -130,16 +134,31 @@ namespace NewExercise
             return _random.Next(min, max);
         }
 
-        public static int Conversation1(int x)
+        public static string Conversation1(int x)
         {
             if (x == 1)
             {
-                Console.WriteLine("");
+                Console.WriteLine("Aye, you must have really hit your head. This country is in the grips of Civil War. Brother killing brother, each and every one of us has been impacted.");
             }
             else if (x == 2)
             {
                 Console.WriteLine("Ah stranger, you are in what was once the town of Bergen, Norway.Don't tell me you have come from a different land during such troubling times.");
             }
+            return "Have an ale on the house, you look like you need it.";
         }
+        public static string Conversation2(int x)
+        {
+            if (x == 1)
+            {
+                Console.WriteLine();
+            }
+            else if (x == 2)
+            {
+                Console.WriteLine();
+            }
+
+        }
+        
     }
 }
+
