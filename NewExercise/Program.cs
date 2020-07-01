@@ -79,24 +79,38 @@ namespace NewExercise
             Console.WriteLine("The mysterious man shrieks in pain. You have hurt him this time." +
                 "The next thing you know the man is engulfed in smoke, you cant see him through the haze and begin swinging your weapon wildly." +
                 "You hit nothing, and as the smoke dissipates you realize he has vanished.");
-            This is the first battle, and very basic.Each encounter will add more variable and more code.
+            //This is the first battle, and very basic.Each encounter will add more variable and more code.
 
           Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
                 "As you look down toward the smoldering town, many more questions arise, and you need answers.");
             Console.WriteLine("You make your way down to what is left of the town and notice that the inn remains somewhat intact." +
                 "You make your way inside and into the pub area. The few people you see inside show signs of struggle, and all have expressions of great sorrow." +
                 "You immediately approach the barkeep.");
-            Console.WriteLine("Hello lad, he says attempting to bring out something resembling a smile.");
+            Console.WriteLine("Barkeep: Hello lad, he says attempting to bring out something resembling a smile.");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("Choose what to say by typing in the number associated with the text:");
             Console.WriteLine("1. What the hell happened here?");
             Console.WriteLine("2. Where am I? I awoke in the church and can barely remember my name.");
             Console.WriteLine("***************************************************************************");
             
-            int chat = int.Parse(Console.ReadLine());
-            Conversation1(chat);
+            int chat1 = int.Parse(Console.ReadLine());
+            Conversation1(chat1);
 
-            
+            Console.WriteLine("Barkeep: Is there anything else you would like to know?");
+            Console.WriteLine("************************************************************************");
+            Console.WriteLine("Choose what to say by typing in the number associated with the text:");
+            Console.WriteLine("1. How did the fighting begin?");
+            Console.WriteLine("2. Is anywhere safe?");
+            Console.WriteLine("************************************************************************");
+
+            int chat2 = int.Parse(Console.ReadLine());
+            Conversation2(chat2);
+
+
+
+
+
+
 
 
 
@@ -138,25 +152,27 @@ namespace NewExercise
         {
             if (x == 1)
             {
-                Console.WriteLine("Aye, you must have really hit your head. This country is in the grips of Civil War. Brother killing brother, each and every one of us has been impacted.");
+                Console.WriteLine("Barkeep: Aye, you must have really hit your head. This country is in the grips of Civil War. Brother killing brother, each and every one of us has been impacted.");
             }
             else if (x == 2)
             {
-                Console.WriteLine("Ah stranger, you are in what was once the town of Bergen, Norway.Don't tell me you have come from a different land during such troubling times.");
+                Console.WriteLine("Barkeep: Ah stranger, you are in what was once the town of Bergen, Norway. Don't tell me you have come from a different land during such troubling times.");
             }
-            return "Have an ale on the house, you look like you need it.";
+            return "Barkeep: Have an ale on the house, you look like you need it.";
         }
         public static string Conversation2(int x)
         {
             if (x == 1)
             {
-                Console.WriteLine();
+                Console.WriteLine("Barkeep: It all began with the death of Emperor Nergal. With his death, two factions arose; the Brotherhood of Burzum," +
+                    "led by Varg 'the Black Count' and the Legion of Mayhem, led by Euronymous. Both sides revel in destruction and evil, may god have mercy on this land.");
             }
             else if (x == 2)
             {
-                Console.WriteLine();
+                Console.WriteLine("Barkeep: Aye, nowhere in this land. But if you can make it into the Kingdom of Finland you may be permitted asylum." +
+                    "However, all the roads out of Norway have been blocked, and the bridges burned. The only way out is by boat, and it is a perilous journey.");
             }
-
+            return "Barkeep: Is there anything else lad?";
         }
         
     }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matth\\Desktop\\Repos3\\NightSideEclipse\\NewExercise\\NewExercise.csproj",
+      "projectUniqueName": "C:\\Users\\matth\\Desktop\\Repos3\\PizzaAlgos2\\NightSideEclipse\\NewExercise\\NewExercise.csproj",
       "projectName": "NewExercise",
-      "projectPath": "C:\\Users\\matth\\Desktop\\Repos3\\NightSideEclipse\\NewExercise\\NewExercise.csproj",
+      "projectPath": "C:\\Users\\matth\\Desktop\\Repos3\\PizzaAlgos2\\NightSideEclipse\\NewExercise\\NewExercise.csproj",
       "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matth\\Desktop\\Repos3\\NightSideEclipse\\NewExercise\\obj\\",
+      "outputPath": "C:\\Users\\matth\\Desktop\\Repos3\\PizzaAlgos2\\NightSideEclipse\\NewExercise\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
