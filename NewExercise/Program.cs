@@ -9,6 +9,8 @@ namespace NewExercise
     {
         static void Main(string[] args)
         {
+            Player characterInfo = new Player();
+
             Console.WriteLine("Welcome to NightSide Eclipse, a text-based RPG with a Black Metal theme.");
             Console.WriteLine("You are not prepared for the horrors that lie ahead. This is not a world for the faint of heart.");
             Console.WriteLine("<================================================================================================>");
@@ -17,19 +19,23 @@ namespace NewExercise
                 "The roof is completely gone, and the pews are burnt and mostly destroyed. You notice the crucifix, before the fire it was inverted." +
                 "Something about the cross jogs your memory, you have been here before, but you cannot remember your name or who you are." +
                 "Try to remember your name (Enter your name now)");
-            string playerName = Console.ReadLine();
+            characterInfo.PlayerChar = Console.ReadLine();
 
-            Console.WriteLine($"{playerName} thats it! What happened here, why cant you remember anything you think to yourself." +
+            Console.WriteLine($"{characterInfo.PlayerChar} thats it! What happened here, why cant you remember anything you think to yourself." +
                 $"Whatever it was it wasnt good.");
             Console.WriteLine("You pick yourself up and begin to walk out of the building, as you do you notice a few weapons strewn across the ground." +
                 "You see a sword & shield, a battle axe, and a magic staff.");
-            Console.WriteLine("Choose a weapon to equip by typing in the corresponding character class. " +
-                "Sword & Shield-Crusader." +
-                "BattleAxe-Berzerker. " +
-                "Magic Staff-Sorceror");
-            string playerClass = Console.ReadLine();
+            Console.WriteLine("Choose a weapon to equip by typing in the corresponding character class.");
+            
+            Console.WriteLine("Sword & Shield-Crusader.");
+            Console.WriteLine("**************************");
+            Console.WriteLine("BattleAxe-Berzerker.");
+            Console.WriteLine("**************************");
+            Console.WriteLine("Magic Staff-Sorceror");
+            Console.WriteLine("**************************");
+            characterInfo.CharClass = Console.ReadLine();
 
-            Console.WriteLine($"{playerName} you have selected the {playerClass} class. Your adventure will begin soon!" +
+            Console.WriteLine($"{characterInfo.PlayerChar} you have selected the {characterInfo.CharClass} class. Your adventure will begin soon!" +
                 $"Now you must assign your attribute points");
 
             Console.WriteLine("First here is a brief description of each attribute:");
@@ -40,29 +46,35 @@ namespace NewExercise
             Console.WriteLine("Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");
 
             Console.WriteLine("You have 20 attribute points.");
-
+            
             Console.WriteLine("How many points would you like to add to Strength?");
-            int playerStr = int.Parse(Console.ReadLine());
+            characterInfo.CharStr = int.Parse(Console.ReadLine());
 
             Console.WriteLine("How many points would you like to add to Agility?");
-            var playerAgi = int.Parse(Console.ReadLine());
+            characterInfo.CharAgi = int.Parse(Console.ReadLine());
 
             Console.WriteLine("How many points would you like to add to Intellect?");
-            var playerInt = int.Parse(Console.ReadLine());
+            characterInfo.CharInt = int.Parse(Console.ReadLine());
+            //Add stamina, possibly take away intellect?
+
+            characterInfo.PlayerHP = 100;
+
+            Console.WriteLine($"You have {characterInfo.CharStr} Strength, {characterInfo.CharAgi} Agility, and {characterInfo.CharInt} Intellect." +
+                $"You also begin your journey with {characterInfo.PlayerHP} Health Points");
 
             Console.WriteLine($"You grip your weapon tightly as you brace yourself for whatever lies outside of the church." +
-                $"You are {playerName}, and you will become a powerful {playerClass}." +
+                $"You are {characterInfo.PlayerChar}, and you will become a powerful {characterInfo.CharClass}." +
                 $"As you make your way outside you realize that the rest of the town lies in ruin as well." +
-                $"You begin to hope that {playerStr}, {playerAgi}, {playerInt}, is enough Strength, Agility, and Intellect to overcome the trials ahead.");
+                $"You begin to hope that you have what it takes to face the trials that lie ahead...");
 
             Console.WriteLine($"As you step outside a full moon looms overhead, partially obscured by the smoke still rising from the smoldering town." +
                 $"You hear a twig snap on the side of the church and you realize that you are not alone." +
-                $"You see a shadowy figure appear next to the building - Well well well, what do we have here, a half dead {playerClass}? This should be easy.");
+                $"You see a shadowy figure appear next to the building - Well well well, what do we have here, a half dead {characterInfo.PlayerChar}? This should be easy.");
             Console.WriteLine("The figure emerges from the shadows, it is a man, but not fully human, he has long black hair, and long fingernails as sharp as razorblades." +
                 "You have no choice, it is time to fight, you unsheath your weapon and the man smirks - Ah, he still has a little fight in him." +
                 "Good! The meal is always more satisfying when it puts up a fight.");
 
-            var battleOne = Encounter(playerStr, playerAgi);
+            var battleOne = Encounter(characterInfo.CharStr, characterInfo.CharAgi);
 
             Console.WriteLine($"Knowing that your opponent is stronger, you seize the initiative and strike first.");
             Console.WriteLine(battleOne);
@@ -95,8 +107,10 @@ namespace NewExercise
             
             int chat1 = int.Parse(Console.ReadLine());
             Conversation1(chat1);
+            Console.WriteLine(characterInfo.PlayerChar);
 
-            Console.WriteLine("Barkeep: Is there anything else you would like to know?");
+            Console.WriteLine($"Barkeep: A pleasure to meet you {characterInfo.PlayerChar}, I know everyone in this town, and you arent from here, thats for sure. " +
+                $"Is there anything else you would like to know?");
             Console.WriteLine("************************************************************************");
             Console.WriteLine("Choose what to say by typing in the number associated with the text:");
             Console.WriteLine("1. How did the fighting begin?");
@@ -105,6 +119,15 @@ namespace NewExercise
 
             int chat2 = int.Parse(Console.ReadLine());
             Conversation2(chat2);
+
+            Console.WriteLine($"Barkeep: Good luck on your journey {characterInfo.PlayerChar}. Take these coins with you, its not much but I have a feeling that I should help you stranger.");
+
+            characterInfo.PlayerCoins = 100;
+
+            Console.WriteLine($"You recieve {characterInfo.PlayerCoins} Gold Coins.");
+
+            Console.WriteLine("You thank the Barkeep and head back out into the ruins of the town. The sun is beginning to rise, and the smoke has faded." +
+                "As you look down at the embers of a nearby building you decide to head east. Unsure of where the journey will take you, you are prepared for anything.");
 
 
 
@@ -152,11 +175,13 @@ namespace NewExercise
         {
             if (x == 1)
             {
-                Console.WriteLine("Barkeep: Aye, you must have really hit your head. This country is in the grips of Civil War. Brother killing brother, each and every one of us has been impacted.");
+                Console.WriteLine("Barkeep: Aye, you must have really hit your head. This country is in the grips of Civil War. Brother killing brother, each and every one of us has been impacted." +
+                    "Enough about that though, whats your name stranger?");
             }
             else if (x == 2)
             {
-                Console.WriteLine("Barkeep: Ah stranger, you are in what was once the town of Bergen, Norway. Don't tell me you have come from a different land during such troubling times.");
+                Console.WriteLine("Barkeep: Ah stranger, you are in what was once the town of Bergen, Norway. Don't tell me you have come from a different land during such troubling times." +
+                    "Enough about that though, whats your name stranger?");
             }
             return "Barkeep: Have an ale on the house, you look like you need it.";
         }
@@ -174,6 +199,8 @@ namespace NewExercise
             }
             return "Barkeep: Is there anything else lad?";
         }
+
+       
         
     }
 }
