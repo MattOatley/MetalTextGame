@@ -26,12 +26,13 @@ namespace NewExercise
             Console.WriteLine("You pick yourself up and begin to walk out of the building, as you do you notice a few weapons strewn across the ground." +
                 "You see a sword & shield, a battle axe, and a magic staff.");
             Console.WriteLine("Choose a weapon to equip by typing in the corresponding character class.");
-            
-            Console.WriteLine("Sword & Shield-Crusader.");
+
+            Console.WriteLine("***************************");
+            Console.WriteLine("Sword & Shield -- Crusader.");
             Console.WriteLine("**************************");
-            Console.WriteLine("BattleAxe-Berzerker.");
+            Console.WriteLine("BattleAxe -- Berzerker.");
             Console.WriteLine("**************************");
-            Console.WriteLine("Magic Staff-Sorceror");
+            Console.WriteLine("Magic Staff -- Sorceror");
             Console.WriteLine("**************************");
             characterInfo.CharClass = Console.ReadLine();
 
@@ -66,28 +67,34 @@ namespace NewExercise
                 $"You are {characterInfo.PlayerChar}, and you will become a powerful {characterInfo.CharClass}." +
                 $"As you make your way outside you realize that the rest of the town lies in ruin as well." +
                 $"You begin to hope that you have what it takes to face the trials that lie ahead...");
+            Console.Write($"Press Enter To Continue:");
+            Console.ReadLine();
 
             Console.WriteLine($"As you step outside a full moon looms overhead, partially obscured by the smoke still rising from the smoldering town." +
                 $"You hear a twig snap on the side of the church and you realize that you are not alone." +
-                $"You see a shadowy figure appear next to the building - Well well well, what do we have here, a half dead {characterInfo.PlayerChar}? This should be easy.");
+                $"You see a shadowy figure appear next to the building - Well well well, what do we have here, a half dead {characterInfo.CharClass}? This should be easy.");
+            Console.Write($"Press Enter To Continue:");
+            Console.ReadLine();
+
             Console.WriteLine("The figure emerges from the shadows, it is a man, but not fully human, he has long black hair, and long fingernails as sharp as razorblades." +
                 "You have no choice, it is time to fight, you unsheath your weapon and the man smirks - Ah, he still has a little fight in him." +
                 "Good! The meal is always more satisfying when it puts up a fight.");
 
-            var battleOne = Encounter(characterInfo.CharStr, characterInfo.CharAgi);
+            var battleOne = Battle.Encounter(characterInfo.CharStr, characterInfo.CharAgi);
 
             Console.WriteLine($"Knowing that your opponent is stronger, you seize the initiative and strike first.");
             Console.WriteLine(battleOne);
             //Add some player options here, Huge wall of text is no fun.
 
-            int enemyDmg1 = RandomNumber(0, 11);
-            int playerDmg1 = RandomNumber(0, 20);
+            characterInfo.PlayerDmg1 = Player.RandomNumber(0, 16);
+            characterInfo.EnemyDmg1 = Player.RandomNumber(0, 11);
 
             //Work on above damage model for player and enemy damage.
 
             Console.WriteLine("The man stumbles in pain, but quickly regains his footing - Ha! It will take more than that to best me!");
             Console.WriteLine($"He lashes forward with his razor sharp claws, you attempt to block his attack." +
-                $"The mysterious man deals {enemyDmg1} points of dmg to you");
+                $"The mysterious man deals {characterInfo.EnemyDmg1} points of dmg to you");
+            Console.WriteLine($"After dealing {characterInfo.EnemyDmg1} damage, you are left with {characterInfo.TakeDamage(characterInfo.EnemyDmg1)}HP");
             Console.WriteLine();
             Console.WriteLine("The slash burns your skin, but you won't go down that easily. You strike back.");
             Console.WriteLine(battleOne);
@@ -147,34 +154,9 @@ namespace NewExercise
 
        
 
-        public static string Encounter(int x, int y)
-        {
-            if(x >= 10 && y >= 10)
-            {
-                Console.WriteLine("You hit the target two times for 10 points of damage each; dealing a total of 20 damage.");
-            }
-            else if (x <= 10 && y >= 10)
-            {
-                Console.WriteLine("You hit the target two times for 5 points of damage each; dealing a total of 10 damage.");
-            }
-            else if (x <= 10 && y <= 10)
-            {
-                Console.WriteLine("You hit the target one time for 5 points of damage each; dealing a total of 5 damage.");
-            }
-            else if (x >= 10 && y <= 10)
-            {
-                Console.WriteLine("You hit the target one time for 10 points of damage each; dealing a total of 10 damage.") ;
-            }
-            return "You missed the target.";
-        }
+       
 
-        private static readonly Random _random = new Random();
-
-        public static int RandomNumber(int min, int max)
-        {
-            return _random.Next(min, max);
-        }
-
+       
         
 
        
