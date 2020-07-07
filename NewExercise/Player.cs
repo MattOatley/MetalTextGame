@@ -21,9 +21,9 @@ namespace NewExercise
         public int CharAgi { get; set; }
         public int CharInt { get; set; }
         
-        public static string TakeDamage()
+        public string TakeDamage()
         {
-
+            return "player takes damage";
         }
     }
 

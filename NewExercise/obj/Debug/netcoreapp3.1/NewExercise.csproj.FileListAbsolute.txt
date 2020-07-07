@@ -24,3 +24,16 @@ C:\Users\matth\Desktop\Repos3\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3
 C:\Users\matth\Desktop\Repos3\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.dll
 C:\Users\matth\Desktop\Repos3\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.pdb
 C:\Users\matth\Desktop\Repos3\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.genruntimeconfig.cache
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.exe
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.deps.json
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.runtimeconfig.json
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.runtimeconfig.dev.json
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.dll
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\bin\Debug\netcoreapp3.1\NewExercise.pdb
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.csprojAssemblyReference.cache
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.AssemblyInfoInputs.cache
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.AssemblyInfo.cs
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.csproj.CoreCompileInputs.cache
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.dll
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.pdb
+C:\Users\matth\Desktop\Repos3\PizzaAlgos2\NightSideEclipse\NewExercise\obj\Debug\netcoreapp3.1\NewExercise.genruntimeconfig.cache
