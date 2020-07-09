@@ -26,6 +26,8 @@ namespace NewExercise
                 Console.WriteLine("You hit the target one time for 10 points of damage; dealing a total of 10 damage.");
             }
             return "You missed the target.";
+
+            //TODO Something wrong with code, player missing target when they shouldnt, FIX
         }
 
     }
