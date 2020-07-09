@@ -10,58 +10,16 @@ namespace NewExercise
         static void Main(string[] args)
         {
             Player characterInfo = new Player();
+            
+            Introduction.Intro();
 
-            Console.WriteLine("Welcome to NightSide Eclipse, a text-based RPG with a Black Metal theme.");
-            Console.WriteLine("You are not prepared for the horrors that lie ahead. This is not a world for the faint of heart.");
-            Console.WriteLine("<================================================================================================>");
-            Console.WriteLine();
-            Console.WriteLine("You awaken in covered in soot and ash, you appear to be in the ruins of a burned out church. " +
-                "The roof is completely gone, and the pews are burnt and mostly destroyed. You notice the crucifix, before the fire it was inverted." +
-                "Something about the cross jogs your memory, you have been here before, but you cannot remember your name or who you are." +
-                "Try to remember your name (Enter your name now)");
             characterInfo.PlayerChar = Console.ReadLine();
 
-            Console.WriteLine($"{characterInfo.PlayerChar} thats it! What happened here, why cant you remember anything you think to yourself." +
-                $"Whatever it was it wasnt good.");
-            Console.WriteLine("You pick yourself up and begin to walk out of the building, as you do you notice a few weapons strewn across the ground." +
-                "You see a sword & shield, a battle axe, and a magic staff.");
-            Console.WriteLine("Choose a weapon to equip by typing in the corresponding character class.");
+            Introduction introduction = new Introduction();
 
-            Console.WriteLine("***************************");
-            Console.WriteLine("Sword & Shield -- Crusader.");
-            Console.WriteLine("**************************");
-            Console.WriteLine("BattleAxe -- Berzerker.");
-            Console.WriteLine("**************************");
-            Console.WriteLine("Magic Staff -- Sorceror");
-            Console.WriteLine("**************************");
-            characterInfo.CharClass = Console.ReadLine();
+            introduction.CharacterCreation();
 
-            Console.WriteLine($"{characterInfo.PlayerChar} you have selected the {characterInfo.CharClass} class. Your adventure will begin soon!" +
-                $"Now you must assign your attribute points");
-
-            Console.WriteLine("First here is a brief description of each attribute:");
-            Console.WriteLine("Strength - Determines how much damage you deal with weapons");
-            Console.WriteLine("<===========================================================>");
-            Console.WriteLine("Agility - Determines how many attacks you may make each turn");
-            Console.WriteLine("<===========================================================>");
-            Console.WriteLine("Intellect - Determines which spells you can use (some spells can only be used by the sorceror)");
-
-            Console.WriteLine("You have 20 attribute points.");
-            
-            Console.WriteLine("How many points would you like to add to Strength?");
-            characterInfo.CharStr = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("How many points would you like to add to Agility?");
-            characterInfo.CharAgi = int.Parse(Console.ReadLine());
-
-            Console.WriteLine("How many points would you like to add to Intellect?");
-            characterInfo.CharInt = int.Parse(Console.ReadLine());
-            //Add stamina, possibly take away intellect?
-
-            characterInfo.PlayerHP = 100;
-
-            Console.WriteLine($"You have {characterInfo.CharStr} Strength, {characterInfo.CharAgi} Agility, and {characterInfo.CharInt} Intellect." +
-                $"You also begin your journey with {characterInfo.PlayerHP} Health Points");
+            //TODO Finish the intro class and begin working on chapter 1 class text.
 
             Console.WriteLine($"You grip your weapon tightly as you brace yourself for whatever lies outside of the church." +
                 $"You are {characterInfo.PlayerChar}, and you will become a powerful {characterInfo.CharClass}." +
@@ -82,33 +40,49 @@ namespace NewExercise
 
             var battleOne = Battle.Encounter(characterInfo.CharStr, characterInfo.CharAgi);
 
-            Console.WriteLine($"Knowing that your opponent is stronger, you seize the initiative and strike first.");
+            Console.WriteLine("Knowing that your opponent is stronger, you decide to seize the initiative and strike first.");
+            Console.Write("Press Enter To Attack:");
+            Console.ReadLine();
             Console.WriteLine(battleOne);
+            //DONE
             //Add some player options here, Huge wall of text is no fun.
+            //DONE
 
             characterInfo.PlayerDmg1 = Player.RandomNumber(0, 16);
             characterInfo.EnemyDmg1 = Player.RandomNumber(0, 11);
 
             //Work on above damage model for player and enemy damage.
+            //Damage model coming along, still needs quite a bit of work.
 
             Console.WriteLine("The man stumbles in pain, but quickly regains his footing - Ha! It will take more than that to best me!");
+            Console.Write("Press Enter To Continue:");
+            Console.ReadLine();
             Console.WriteLine($"He lashes forward with his razor sharp claws, you attempt to block his attack." +
                 $"The mysterious man deals {characterInfo.EnemyDmg1} points of dmg to you");
             Console.WriteLine($"After dealing {characterInfo.EnemyDmg1} damage, you are left with {characterInfo.TakeDamage(characterInfo.EnemyDmg1)}HP");
-            Console.WriteLine();
+            Console.Write("Press Enter To Continue:");
+            Console.ReadLine();
             Console.WriteLine("The slash burns your skin, but you won't go down that easily. You strike back.");
             Console.WriteLine(battleOne);
-            Console.WriteLine();
+            
+            Console.Write("Press Enter To Continue:");
+            Console.ReadLine();
             Console.WriteLine("The mysterious man shrieks in pain. You have hurt him this time." +
                 "The next thing you know the man is engulfed in smoke, you cant see him through the haze and begin swinging your weapon wildly." +
                 "You hit nothing, and as the smoke dissipates you realize he has vanished.");
+            Console.WriteLine("CONGRATULATIONS!! YOU ARE VICTORIOUS!!");
             //This is the first battle, and very basic.Each encounter will add more variable and more code.
 
-          Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
+
+            Console.Write("Press Enter To Continue:");
+            Console.ReadLine();
+            Console.WriteLine("What was he you think to yourself, and more importantly, what is going in this world." +
                 "As you look down toward the smoldering town, many more questions arise, and you need answers.");
             Console.WriteLine("You make your way down to what is left of the town and notice that the inn remains somewhat intact." +
                 "You make your way inside and into the pub area. The few people you see inside show signs of struggle, and all have expressions of great sorrow." +
                 "You immediately approach the barkeep.");
+            Console.Write("Press Enter To Continue:");
+            Console.ReadLine();
             Console.WriteLine("Barkeep: Hello lad, he says attempting to bring out something resembling a smile.");
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("Choose what to say by typing in the number associated with the text:");
